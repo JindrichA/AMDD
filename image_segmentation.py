@@ -61,7 +61,9 @@ def draw_lines(image, x_coord_1, x_coord_2, fields, color, thickness):
         cv2.line(image, start_point, end_point, color, thickness)
 
 # load a files with coordinates of the object
-with open('coordinates.csv', 'r') as csvfile:
+# REPLACE WITH THE NEW ONE IF YOU WANT TO CHANGE THE COORDINATES
+
+with open('coordinates_save.csv', 'r') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         # Get the coordinates of the object

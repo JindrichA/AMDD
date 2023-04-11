@@ -5,7 +5,7 @@ import csv
 import matplotlib
 matplotlib.use('TkAgg')
 # Set the folder path
-folder_path = 'Data'
+folder_path = 'data/original_images'
 
 # Open the CSV file for writing
 with open('coordinates.csv', 'w', newline='') as csvfile:
