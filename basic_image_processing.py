@@ -1,6 +1,7 @@
 import os
 import cv2
 import numpy as np
+import matplotlib.pyplot as plt
 # Folder with original images
 data_path = 'data/original_images'
 
@@ -45,7 +46,27 @@ for i in range(len(list_of_all_images)):
     # cv2.imshow('Contours', resized_image)
     # cv2.waitKey(1000)
     cv2.destroyAllWindows()
+    column_means = np.mean(gray, axis=0)
 
+    window_size = 50
+
+    # Create a uniform kernel for convolution
+    kernel = np.ones(window_size) / window_size
+    column_means = column_means - np.mean(column_means)
+    # Convolve the signal with the kernel using 'same' mode to keep the output size equal to the input size
+    filtered_signal = np.convolve(column_means, kernel, mode='same')
+    # Create a new figure and axis
+    fig, ax = plt.subplots()
+    # Plot the signal on the axis
+    ax.plot(filtered_signal)
+
+    # Set labels and title
+    ax.set_xlabel('width')
+    ax.set_ylabel('mean')
+    ax.set_title(current_image)
+    plt.savefig('data/means/'+current_image, dpi=300, bbox_inches='tight')
+    # Display the plot
+    #plt.show()
 
 
 
