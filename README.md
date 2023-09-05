@@ -1,6 +1,7 @@
-# Image Processing and Analysis Project
+# Automatic material deformation detection
 
-This GitHub project is designed to perform basic image preprocessing and analysis on a collection of images using Python and various libraries such as OpenCV, NumPy, and Matplotlib. The goal of this project is to demonstrate how to process images, extract contours, and analyze mean intensity variations along the width of the images.
+This GitHub project is designed to perform Automatic material deformation detection of in images using Python and various libraries such as OpenCV, NumPy, and Matplotlib. 
+
 
 ## Prerequisites
 
